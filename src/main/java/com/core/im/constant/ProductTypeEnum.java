@@ -1,4 +1,4 @@
-package com.core.im.enums;
+package com.core.im.constant;
 
 public enum ProductTypeEnum {
 }
