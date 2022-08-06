@@ -27,11 +27,11 @@ public class Bucket {
     private long id;
     @OneToOne(fetch = FetchType.LAZY)
     private AppUser user;
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
             name = "bucket_has_product",
-            joinColumns = { @JoinColumn(name = "id") },
-            inverseJoinColumns = { @JoinColumn(name = "id") }
+            joinColumns = { @JoinColumn(name = "bucket_id") },
+            inverseJoinColumns = { @JoinColumn(name = "product_id") }
     )
     private List<Product> product;
 }

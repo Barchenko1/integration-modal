@@ -22,7 +22,6 @@ public class Post {
     private String authorEmail;
     private String message;
     @OneToMany(
-            mappedBy = "post",
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )

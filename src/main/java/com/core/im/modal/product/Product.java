@@ -44,12 +44,11 @@ public class Product {
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinTable(
             name = "product_option",
-            joinColumns = { @JoinColumn(name = "id") },
-            inverseJoinColumns = { @JoinColumn(name = "id") }
+            joinColumns = { @JoinColumn(name = "product_id") },
+            inverseJoinColumns = { @JoinColumn(name = "option_id") }
     )
     private List<Option> option;
     @OneToMany(
-            mappedBy = "product",
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )

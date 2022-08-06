@@ -31,8 +31,8 @@ public class Shop {
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinTable(
             name = "shop_has_product",
-            joinColumns = { @JoinColumn(name = "id") },
-            inverseJoinColumns = { @JoinColumn(name = "id") }
+            joinColumns = { @JoinColumn(name = "shop_id") },
+            inverseJoinColumns = { @JoinColumn(name = "product_id") }
     )
     private List<Product> products;
 }

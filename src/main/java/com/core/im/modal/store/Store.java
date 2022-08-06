@@ -26,18 +26,18 @@ public class Store {
     private long id;
     @ManyToOne(fetch = FetchType.LAZY)
     private StoreAddress storeAddress;
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
             name = "store_has_product",
-            joinColumns = { @JoinColumn(name = "id") },
-            inverseJoinColumns = { @JoinColumn(name = "id") }
+            joinColumns = { @JoinColumn(name = "store_id") },
+            inverseJoinColumns = { @JoinColumn(name = "product_id") }
     )
     private List<Product> products;
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
             name = "shop_has_store",
-            joinColumns = { @JoinColumn(name = "id") },
-            inverseJoinColumns = { @JoinColumn(name = "id") }
+            joinColumns = { @JoinColumn(name = "store_id") },
+            inverseJoinColumns = { @JoinColumn(name = "stop_id") }
     )
     private List<Shop> shops;
 }
