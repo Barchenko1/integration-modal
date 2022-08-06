@@ -12,8 +12,8 @@ import jakarta.persistence.Table;
 @Table(name = "option_group")
 public class OptionGroup {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", updatable = false, nullable = false)
     private long id;
     private OptionGroupEnum optionsGroup;
 }

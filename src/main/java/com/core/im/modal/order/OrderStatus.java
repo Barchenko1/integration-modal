@@ -12,8 +12,8 @@ import jakarta.persistence.Table;
 @Table(name = "order_status")
 public class OrderStatus {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", updatable = false, nullable = false)
     private long id;
     private OrderStatusEnum orderStatus;
 }

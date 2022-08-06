@@ -12,7 +12,7 @@ import jakarta.persistence.Table;
 @Table(name = "user_role")
 public class UserRole {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private long id;
     private RoleEnum name;

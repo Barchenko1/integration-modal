@@ -21,8 +21,8 @@ import java.util.List;
 @Table(name = "shop")
 public class Shop {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", updatable = false, nullable = false)
     private long id;
     @ManyToOne(fetch = FetchType.LAZY)
     private ShopAddress shopAddress;

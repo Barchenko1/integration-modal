@@ -11,8 +11,8 @@ import jakarta.persistence.Table;
 @Table(name = "user_address")
 public class UserAddress {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", updatable = false, nullable = false)
     private long id;
     private String street;
     private int building;

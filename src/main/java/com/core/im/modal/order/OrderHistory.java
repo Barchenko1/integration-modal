@@ -16,8 +16,8 @@ import java.util.Date;
 @Table(name = "order_history")
 public class OrderHistory {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", updatable = false, nullable = false)
     private long id;
     private Date dataOfOrder;
     @ManyToOne(fetch = FetchType.LAZY)
