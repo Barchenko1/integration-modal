@@ -12,7 +12,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "order")
+@Table(name = "order_item")
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

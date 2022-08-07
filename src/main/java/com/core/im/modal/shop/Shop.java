@@ -26,11 +26,11 @@ public class Shop {
     private long id;
     @ManyToOne(fetch = FetchType.LAZY)
     private ShopAddress shopAddress;
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "shops")
     private List<Store> stores;
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinTable(
-            name = "shop_has_product",
+            name = "shop_product",
             joinColumns = { @JoinColumn(name = "shop_id") },
             inverseJoinColumns = { @JoinColumn(name = "product_id") }
     )

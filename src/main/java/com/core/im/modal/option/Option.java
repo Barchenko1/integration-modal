@@ -14,14 +14,12 @@ import jakarta.persistence.Table;
 import java.util.List;
 
 @Entity
-@Table(name = "option")
+@Table(name = "option_item")
 public class Option {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", updatable = false, nullable = false)
     private long id;
-
-
     @ManyToMany(fetch = FetchType.LAZY)
     private List<Product> product;
     @ManyToOne(fetch = FetchType.LAZY)

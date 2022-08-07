@@ -2,7 +2,6 @@ package com.core.im.modal.store;
 
 import com.core.im.modal.product.Product;
 import com.core.im.modal.shop.Shop;
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -28,16 +27,16 @@ public class Store {
     private StoreAddress storeAddress;
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
-            name = "store_has_product",
+            name = "store_product",
             joinColumns = { @JoinColumn(name = "store_id") },
             inverseJoinColumns = { @JoinColumn(name = "product_id") }
     )
     private List<Product> products;
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
-            name = "shop_has_store",
+            name = "store_shop",
             joinColumns = { @JoinColumn(name = "store_id") },
-            inverseJoinColumns = { @JoinColumn(name = "stop_id") }
+            inverseJoinColumns = { @JoinColumn(name = "shop_id") }
     )
     private List<Shop> shops;
 }

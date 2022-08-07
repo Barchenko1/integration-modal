@@ -1,4 +1,4 @@
-package com.core.im.modal.like;
+package com.core.im.modal.view;
 
 import com.core.im.modal.product.Product;
 import com.core.im.modal.user.AppUser;
@@ -12,8 +12,8 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "like")
-public class Like {
+@Table(name = "viewed")
+public class Viewed {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", updatable = false, nullable = false)
