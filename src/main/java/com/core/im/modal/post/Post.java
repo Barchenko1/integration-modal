@@ -25,5 +25,5 @@ public class Post {
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    private List<PostComment> comments;
+    private List<Comment> comments;
 }

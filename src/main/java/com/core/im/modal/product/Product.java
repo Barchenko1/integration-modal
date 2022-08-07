@@ -2,6 +2,7 @@ package com.core.im.modal.product;
 
 import com.core.im.modal.option.Option;
 import com.core.im.modal.post.Post;
+import com.core.im.modal.review.Review;
 import com.core.im.modal.shop.Shop;
 import com.core.im.modal.store.Store;
 import jakarta.persistence.CascadeType;
@@ -46,7 +47,14 @@ public class Product {
             joinColumns = {@JoinColumn(name = "product_id")},
             inverseJoinColumns = {@JoinColumn(name = "option_item_id")}
     )
-    private List<Option> option;
+    private List<Option> options;
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "product_review",
+            joinColumns = {@JoinColumn(name = "product_id")},
+            inverseJoinColumns = {@JoinColumn(name = "review_id")}
+    )
+    private List<Review> reviews;
     @OneToMany(
             cascade = CascadeType.ALL,
             orphanRemoval = true

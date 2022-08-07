@@ -1,7 +1,5 @@
-package com.core.im.modal.view;
+package com.core.im.modal.post;
 
-import com.core.im.modal.product.Product;
-import com.core.im.modal.user.AppUser;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -12,14 +10,15 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "viewed")
-public class Viewed {
+@Table(name = "comment")
+public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", updatable = false, nullable = false)
     private long id;
+    private String authorName;
+    private String authorEmail;
+    private String message;
     @ManyToOne(fetch = FetchType.LAZY)
-    private AppUser user;
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Product product;
+    private Post post;
 }
