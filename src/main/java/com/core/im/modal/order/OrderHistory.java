@@ -1,6 +1,8 @@
 package com.core.im.modal.order;
 
 import com.core.im.modal.user.AppUser;
+import lombok.Data;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -14,6 +16,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "order_history")
+@Data
 public class OrderHistory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

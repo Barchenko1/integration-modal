@@ -5,6 +5,8 @@ import com.core.im.modal.post.Post;
 import com.core.im.modal.review.Review;
 import com.core.im.modal.shop.Shop;
 import com.core.im.modal.store.Store;
+import lombok.Data;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -23,6 +25,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "product")
+@Data
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

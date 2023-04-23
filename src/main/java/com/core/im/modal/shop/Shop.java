@@ -2,6 +2,8 @@ package com.core.im.modal.shop;
 
 import com.core.im.modal.product.Product;
 import com.core.im.modal.store.Store;
+import lombok.Data;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -19,6 +21,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "shop")
+@Data
 public class Shop {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

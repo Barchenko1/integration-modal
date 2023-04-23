@@ -1,6 +1,8 @@
 package com.core.im.modal.user;
 
 import com.core.im.modal.bucket.Bucket;
+import lombok.Data;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -13,6 +15,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "app_user")
+@Data
 public class AppUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

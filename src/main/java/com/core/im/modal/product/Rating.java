@@ -2,6 +2,8 @@ package com.core.im.modal.product;
 
 import com.core.im.constant.RatingEnum;
 import com.core.im.modal.review.Review;
+import lombok.Data;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -15,6 +17,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "rating")
+@Data
 public class Rating {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

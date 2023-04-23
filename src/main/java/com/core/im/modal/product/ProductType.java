@@ -1,6 +1,8 @@
 package com.core.im.modal.product;
 
 import com.core.im.constant.ProductTypeEnum;
+import lombok.Data;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,6 +12,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "product_type")
+@Data
 public class ProductType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

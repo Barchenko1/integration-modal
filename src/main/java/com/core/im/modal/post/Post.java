@@ -1,5 +1,7 @@
 package com.core.im.modal.post;
 
+import lombok.Data;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,6 +15,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "post")
+@Data
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

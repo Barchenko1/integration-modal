@@ -3,6 +3,8 @@ package com.core.im.modal.review;
 import com.core.im.modal.post.Comment;
 import com.core.im.modal.product.Product;
 import com.core.im.modal.product.Rating;
+import lombok.Data;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -19,6 +21,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "review")
+@Data
 public class Review {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

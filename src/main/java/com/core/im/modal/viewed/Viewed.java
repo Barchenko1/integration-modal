@@ -2,6 +2,8 @@ package com.core.im.modal.viewed;
 
 import com.core.im.modal.product.Product;
 import com.core.im.modal.user.AppUser;
+import lombok.Data;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -13,6 +15,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "viewed")
+@Data
 public class Viewed {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

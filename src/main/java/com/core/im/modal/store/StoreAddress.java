@@ -1,5 +1,7 @@
 package com.core.im.modal.store;
 
+import lombok.Data;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,6 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "store_address")
+@Data
 public class StoreAddress {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
