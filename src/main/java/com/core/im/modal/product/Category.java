@@ -7,6 +7,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 import lombok.Data;
 
 @Entity
@@ -17,5 +18,14 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", updatable = false, nullable = false)
     private long id;
-    private CategoryEnum category;
+    @Column(name = "name", nullable = false, columnDefinition = "varchar(100)")
+    private String categoryName;
+
+    @Transient // Exclude from database mapping
+    private CategoryEnum categoryEnum; // Enum field in the entity
+
+    public void setCategoryEnum(CategoryEnum categoryEnum) {
+        this.categoryEnum = categoryEnum;
+        this.categoryName = categoryEnum.getValue(); // Set the name field with the custom value
+    }
 }
