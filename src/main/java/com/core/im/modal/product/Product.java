@@ -31,7 +31,7 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", updatable = false, nullable = false)
     private long id;
-    private String productName;
+    private String name;
     @ManyToOne(fetch = FetchType.LAZY)
     private Category category;
     @ManyToOne(fetch = FetchType.LAZY)

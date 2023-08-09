@@ -1,14 +1,8 @@
 package com.core.im.modal.user;
 
+import com.core.im.constant.CategoryEnum;
 import com.core.im.constant.RoleEnum;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
@@ -19,6 +13,14 @@ public class UserRole {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private long id;
-    @Enumerated(EnumType.STRING)
-    private RoleEnum name;
+    @Column(name = "name", nullable = false)
+    private String roleName;
+
+    @Transient
+    private RoleEnum roleEnum;
+
+    public void setRoleEnum(RoleEnum roleEnum) {
+        this.roleEnum = roleEnum;
+        this.roleName = roleEnum.getValue();
+    }
 }

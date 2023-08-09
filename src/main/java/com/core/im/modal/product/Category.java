@@ -18,14 +18,14 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", updatable = false, nullable = false)
     private long id;
-    @Column(name = "name", nullable = false, columnDefinition = "varchar(100)")
+    @Column(name = "name", nullable = false)
     private String categoryName;
 
-    @Transient // Exclude from database mapping
-    private CategoryEnum categoryEnum; // Enum field in the entity
+    @Transient
+    private CategoryEnum categoryEnum;
 
     public void setCategoryEnum(CategoryEnum categoryEnum) {
         this.categoryEnum = categoryEnum;
-        this.categoryName = categoryEnum.getValue(); // Set the name field with the custom value
+        this.categoryName = categoryEnum.getValue();
     }
 }

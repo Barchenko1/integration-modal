@@ -1,5 +1,16 @@
 package com.core.im.constant;
 
 public enum RoleEnum {
-    ADMIN, USER
+    ROLE_USER("User"),
+    ROLE_ADMIN("Admin");
+
+    private final String value;
+
+    RoleEnum(String value) {
+        this.value = value;
+    }
+
+    public String getValue() {
+        return value;
+    }
 }

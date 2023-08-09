@@ -1,14 +1,9 @@
 package com.core.im.modal.product;
 
+import com.core.im.constant.BrandEnum;
 import com.core.im.constant.ProductTypeEnum;
+import jakarta.persistence.*;
 import lombok.Data;
-
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "product_type")
@@ -18,5 +13,13 @@ public class ProductType {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", updatable = false, nullable = false)
     private long id;
+    private String name;
+
+    @Transient
     private ProductTypeEnum productType;
+
+    public void setProductType(ProductTypeEnum productType) {
+        this.productType = productType;
+        this.name = productType.getValue();
+    }
 }
