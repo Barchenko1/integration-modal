@@ -26,5 +26,5 @@ public class OrderHistory {
     @ManyToOne(fetch = FetchType.LAZY)
     private AppUser user;
     @ManyToOne(fetch = FetchType.LAZY)
-    private Order order;
+    private OrderItem orderItem;
 }

@@ -8,7 +8,9 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
+import lombok.AccessLevel;
 import lombok.Data;
+import lombok.Getter;
 
 @Entity
 @Table(name = "category")
@@ -22,6 +24,7 @@ public class Category {
     private String categoryName;
 
     @Transient
+    @Getter(AccessLevel.NONE)
     private CategoryEnum categoryEnum;
 
     public void setCategoryEnum(CategoryEnum categoryEnum) {

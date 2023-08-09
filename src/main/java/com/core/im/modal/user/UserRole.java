@@ -3,7 +3,9 @@ package com.core.im.modal.user;
 import com.core.im.constant.CategoryEnum;
 import com.core.im.constant.RoleEnum;
 import jakarta.persistence.*;
+import lombok.AccessLevel;
 import lombok.Data;
+import lombok.Getter;
 
 @Entity
 @Table(name = "user_role")
@@ -17,6 +19,7 @@ public class UserRole {
     private String roleName;
 
     @Transient
+    @Getter(AccessLevel.NONE)
     private RoleEnum roleEnum;
 
     public void setRoleEnum(RoleEnum roleEnum) {

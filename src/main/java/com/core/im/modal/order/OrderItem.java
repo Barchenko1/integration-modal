@@ -16,7 +16,7 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "order_item")
 @Data
-public class Order {
+public class OrderItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", updatable = false, nullable = false)
@@ -28,7 +28,7 @@ public class Order {
     @ManyToOne(fetch = FetchType.LAZY)
     private OrderAddress orderAddress;
     @ManyToOne(fetch = FetchType.LAZY)
-    private OrderDetails orderDetails;
+    private OrderDetail orderDetails;
     @ManyToOne(fetch = FetchType.LAZY)
     private OrderStatus orderStatus;
 }
