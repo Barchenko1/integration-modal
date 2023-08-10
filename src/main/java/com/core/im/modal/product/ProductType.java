@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name = "product_type")
@@ -15,10 +16,11 @@ public class ProductType {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", updatable = false, nullable = false)
     private long id;
+    @Column(name = "name", nullable = false)
+    @Setter(AccessLevel.NONE)
     private String name;
 
     @Transient
-    @Getter(AccessLevel.NONE)
     private ProductTypeEnum productType;
 
     public void setProductType(ProductTypeEnum productType) {

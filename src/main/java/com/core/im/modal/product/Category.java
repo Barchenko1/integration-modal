@@ -10,7 +10,7 @@ import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
 import lombok.AccessLevel;
 import lombok.Data;
-import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name = "category")
@@ -21,14 +21,14 @@ public class Category {
     @Column(name = "id", updatable = false, nullable = false)
     private long id;
     @Column(name = "name", nullable = false)
-    private String categoryName;
+    @Setter(AccessLevel.NONE)
+    private String name;
 
     @Transient
-    @Getter(AccessLevel.NONE)
     private CategoryEnum categoryEnum;
 
     public void setCategoryEnum(CategoryEnum categoryEnum) {
         this.categoryEnum = categoryEnum;
-        this.categoryName = categoryEnum.getValue();
+        this.name = categoryEnum.getValue();
     }
 }

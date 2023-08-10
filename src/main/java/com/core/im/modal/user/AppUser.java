@@ -29,7 +29,7 @@ public class AppUser {
     @ManyToOne(fetch = FetchType.LAZY)
     private UserAddress userAddress;
     @ManyToOne(fetch = FetchType.LAZY)
-    private UserDetails userDetails;
+    private UserDetail userDetail;
     @ManyToOne(fetch = FetchType.LAZY)
     private UserPayment userPayment;
     @OneToOne(fetch = FetchType.LAZY)

@@ -39,6 +39,8 @@ public class Product {
     @ManyToOne(fetch = FetchType.LAZY)
     private Brand brand;
     @ManyToOne(fetch = FetchType.LAZY)
+    private ProductStatus status;
+    @ManyToOne(fetch = FetchType.LAZY)
     private Discount discount;
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "products")
     private List<Shop> shops;

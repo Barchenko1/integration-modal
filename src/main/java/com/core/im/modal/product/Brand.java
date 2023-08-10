@@ -10,7 +10,7 @@ import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
 import lombok.AccessLevel;
 import lombok.Data;
-import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name = "brand")
@@ -20,10 +20,11 @@ public class Brand {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", updatable = false, nullable = false)
     private long id;
+    @Column(name = "name", nullable = false)
+    @Setter(AccessLevel.NONE)
     private String name;
 
     @Transient
-    @Getter(AccessLevel.NONE)
     private BrandEnum brandEnum;
 
     public void setBrandEnum(BrandEnum brandEnum) {

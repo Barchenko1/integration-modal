@@ -1,22 +1,24 @@
-package com.core.im.modal.order;
+package com.core.im.modal.product;
 
-import lombok.Data;
-
+import com.core.im.constant.ProductStatusEnum;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.Data;
 
 @Entity
-@Table(name = "order_detail")
+@Table(name = "product_status")
 @Data
-public class OrderDetail {
+public class ProductStatus {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", updatable = false, nullable = false)
     private long id;
-    private String firstName;
-    private String surName;
+    @Enumerated(EnumType.STRING)
+    private ProductStatusEnum name;
 }

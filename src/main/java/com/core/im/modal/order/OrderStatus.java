@@ -20,5 +20,5 @@ public class OrderStatus {
     @Column(name = "id", updatable = false, nullable = false)
     private long id;
     @Enumerated(EnumType.STRING)
-    private OrderStatusEnum status;
+    private OrderStatusEnum name;
 }

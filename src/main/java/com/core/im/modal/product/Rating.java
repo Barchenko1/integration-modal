@@ -13,7 +13,7 @@ import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
 import lombok.AccessLevel;
 import lombok.Data;
-import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
@@ -26,9 +26,9 @@ public class Rating {
     @Column(name = "id", updatable = false, nullable = false)
     private long id;
     @Column(name = "rating", nullable = false)
+    @Setter(AccessLevel.NONE)
     private int ratingValue;
     @Transient
-    @Getter(AccessLevel.NONE)
     private RateEnum ratingEnum;
 
     public void setRating(RateEnum ratingEnum) {
