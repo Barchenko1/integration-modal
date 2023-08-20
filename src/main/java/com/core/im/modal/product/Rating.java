@@ -27,13 +27,15 @@ public class Rating {
     private long id;
     @Column(name = "rating", nullable = false)
     @Setter(AccessLevel.NONE)
-    private int ratingValue;
+    private int value;
+
+
     @Transient
     private RateEnum ratingEnum;
 
     public void setRating(RateEnum ratingEnum) {
         this.ratingEnum = ratingEnum;
-        this.ratingValue = ratingEnum.getValue();
+        this.value = ratingEnum.getValue();
     }
 
     @ManyToMany(fetch = FetchType.LAZY, mappedBy = "ratings")
