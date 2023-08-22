@@ -24,14 +24,14 @@ public class Tenant {
     @Column(name = "id", updatable = false, nullable = false)
     private long id;
 
-//    @ManyToMany(fetch = FetchType.LAZY)
-//    @JoinTable(
-//            name = "tenant_has_tenantconfiguration",
-//            joinColumns = { @JoinColumn(name = "tenant_id") },
-//            inverseJoinColumns = { @JoinColumn(name = "tenantconfiguration_id") }
-//    )
-//    private List<TenantConfiguration> tenantConfigurationsList;
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    private List<Organization> organizationList;
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(
+            name = "tenant_has_tenantconfiguration",
+            joinColumns = { @JoinColumn(name = "tenant_id") },
+            inverseJoinColumns = { @JoinColumn(name = "tenantconfiguration_id") }
+    )
+    private List<TenantConfiguration> tenantConfigurationsList;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Organization organization;
 
 }

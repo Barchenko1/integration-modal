@@ -20,6 +20,6 @@ public class OrgUser {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", updatable = false, nullable = false)
     private long id;
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    private List<Organization> organizationList;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Organization organization;
 }

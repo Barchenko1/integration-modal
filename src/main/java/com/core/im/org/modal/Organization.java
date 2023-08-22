@@ -23,18 +23,18 @@ public class Organization {
     @Column(name = "id", updatable = false, nullable = false)
     private long id;
 
-//    @ManyToMany(fetch = FetchType.LAZY)
-//    @JoinTable(
-//            name = "org_has_user",
-//            joinColumns = { @JoinColumn(name = "org_id") },
-//            inverseJoinColumns = { @JoinColumn(name = "user_id") }
-//    )
-//    private List<OrgUser> orgUserList;
-//    @ManyToMany(fetch = FetchType.LAZY)
-//    @JoinTable(
-//            name = "org_has_tenant",
-//            joinColumns = { @JoinColumn(name = "org_id") },
-//            inverseJoinColumns = { @JoinColumn(name = "tenant_id") }
-//    )
-//    private List<Tenant> tenantList;
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(
+            name = "org_has_user",
+            joinColumns = { @JoinColumn(name = "org_id") },
+            inverseJoinColumns = { @JoinColumn(name = "user_id") }
+    )
+    private List<OrgUser> orgUserList;
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(
+            name = "org_has_tenant",
+            joinColumns = { @JoinColumn(name = "org_id") },
+            inverseJoinColumns = { @JoinColumn(name = "tenant_id") }
+    )
+    private List<Tenant> tenantList;
 }

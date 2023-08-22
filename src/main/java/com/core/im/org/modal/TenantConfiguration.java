@@ -20,7 +20,6 @@ public class TenantConfiguration {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", updatable = false, nullable = false)
     private long id;
-
-//    @ManyToMany(fetch = FetchType.LAZY)
-//    private List<Tenant> tenantList;
+    @ManyToMany(fetch = FetchType.LAZY)
+    private List<Tenant> tenantList;
 }
