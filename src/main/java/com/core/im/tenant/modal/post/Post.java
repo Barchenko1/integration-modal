@@ -1,16 +1,9 @@
 package com.core.im.tenant.modal.post;
 
+import jakarta.persistence.*;
 import lombok.Data;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
-
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -24,6 +17,8 @@ public class Post {
     private String authorName;
     private String authorEmail;
     private String message;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date dateOfCreate;
     @OneToMany(
             cascade = CascadeType.ALL,
             orphanRemoval = true
