@@ -10,11 +10,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
-import lombok.Data;
 
-import java.util.Date;
+import lombok.Data;
 
 @Entity
 @Table(name = "app_user")
@@ -27,8 +24,7 @@ public class AppUser {
     private String username;
     private String password;
     private String email;
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date dateOfCreate;
+    private long dateOfCreate;
     @ManyToOne(fetch = FetchType.LAZY)
     private UserRole role;
     @ManyToOne(fetch = FetchType.LAZY)

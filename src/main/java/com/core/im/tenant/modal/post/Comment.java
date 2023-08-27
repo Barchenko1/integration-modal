@@ -8,11 +8,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
-import lombok.Data;
 
-import java.util.Date;
+import lombok.Data;
 
 @Entity
 @Table(name = "comment")
@@ -25,8 +22,7 @@ public class Comment {
     private String authorName;
     private String authorEmail;
     private String message;
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date dateOfCreate;
+    private long dateOfCreate;
     @ManyToOne(fetch = FetchType.LAZY)
     private Post post;
 }

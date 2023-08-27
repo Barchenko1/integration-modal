@@ -11,11 +11,8 @@ import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
 import lombok.Data;
 
-import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -27,8 +24,7 @@ public class Tenant {
     @Column(name = "id", updatable = false, nullable = false)
     private long id;
     private String name;
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date dateOfCreate;
+    private long dateOfCreate;
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(

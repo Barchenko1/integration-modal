@@ -8,11 +8,10 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
+
 import lombok.Data;
 
-import java.util.Date;
+
 import java.util.List;
 
 @Entity
@@ -26,8 +25,7 @@ public class Post {
     private String authorName;
     private String authorEmail;
     private String message;
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date dateOfCreate;
+    private long dateOfCreate;
     @OneToMany(
             cascade = CascadeType.ALL,
             orphanRemoval = true

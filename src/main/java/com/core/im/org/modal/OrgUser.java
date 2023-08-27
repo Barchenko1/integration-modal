@@ -8,11 +8,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
 import lombok.Data;
-
-import java.util.Date;
 
 @Entity
 @Table(name = "org_user")
@@ -25,8 +21,7 @@ public class OrgUser {
     private String username;
     private String email;
     private String password;
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date dateOfCreate;
+    private long dateOfCreate;
     @ManyToOne(fetch = FetchType.LAZY)
     private Organization organization;
 }

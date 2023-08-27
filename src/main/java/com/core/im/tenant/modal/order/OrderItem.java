@@ -10,11 +10,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
-import lombok.Data;
 
-import java.util.Date;
+import lombok.Data;
 
 @Entity
 @Table(name = "order_item")
@@ -24,8 +21,7 @@ public class OrderItem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", updatable = false, nullable = false)
     private long id;
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date dateOfCreate;
+    private long dateOfCreate;
     @ManyToOne(fetch = FetchType.LAZY)
     private AppUser user;
     @ManyToOne(fetch = FetchType.LAZY)
