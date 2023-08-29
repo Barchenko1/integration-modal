@@ -1,9 +1,9 @@
-package com.core.im.tenant.modal.store;
+package com.core.im.tenant.modal.business;
 
 import com.core.im.tenant.modal.product.Product;
-import com.core.im.tenant.modal.shop.Shop;
 import lombok.Data;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -19,27 +19,23 @@ import jakarta.persistence.Table;
 import java.util.List;
 
 @Entity
-@Table(name = "store")
+@Table(name = "shop")
 @Data
-public class Store {
+public class Shop {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", updatable = false, nullable = false)
     private long id;
+    private String name;
     @ManyToOne(fetch = FetchType.LAZY)
-    private StoreAddress storeAddress;
-    @ManyToMany(fetch = FetchType.LAZY)
+    private BusinessAddress businessAddress;
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "shops")
+    private List<Store> stores;
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinTable(
-            name = "store_product",
-            joinColumns = { @JoinColumn(name = "store_id") },
+            name = "shop_product",
+            joinColumns = { @JoinColumn(name = "shop_id") },
             inverseJoinColumns = { @JoinColumn(name = "product_id") }
     )
     private List<Product> products;
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(
-            name = "store_shop",
-            joinColumns = { @JoinColumn(name = "store_id") },
-            inverseJoinColumns = { @JoinColumn(name = "shop_id") }
-    )
-    private List<Shop> shops;
 }

@@ -1,4 +1,4 @@
-package com.core.im.tenant.modal.store;
+package com.core.im.tenant.modal.business;
 
 import lombok.Data;
 
@@ -10,9 +10,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "store_address")
+@Table(name = "business_address")
 @Data
-public class StoreAddress {
+public class BusinessAddress {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", updatable = false, nullable = false)
