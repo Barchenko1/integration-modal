@@ -1,6 +1,5 @@
 package com.core.im.tenant.modal.review;
 
-import com.core.im.tenant.modal.post.Comment;
 import com.core.im.tenant.modal.product.Product;
 import com.core.im.tenant.modal.product.Rating;
 import lombok.Data;
@@ -14,7 +13,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 import java.util.List;
@@ -38,6 +36,4 @@ public class Review {
     private List<Rating> ratings;
     @ManyToMany(fetch = FetchType.LAZY, mappedBy = "reviews")
     private List<Product> products;
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Comment postComment;
 }

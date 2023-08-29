@@ -33,6 +33,4 @@ public class AppUser {
     private UserDetail userDetail;
     @ManyToOne(fetch = FetchType.LAZY)
     private UserPayment userPayment;
-    @OneToOne(fetch = FetchType.LAZY)
-    private Bucket bucket;
 }

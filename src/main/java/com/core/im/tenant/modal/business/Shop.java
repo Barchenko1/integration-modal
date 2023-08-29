@@ -31,7 +31,7 @@ public class Shop {
     private BusinessAddress businessAddress;
     @ManyToMany(fetch = FetchType.LAZY, mappedBy = "shops")
     private List<Store> stores;
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
     @JoinTable(
             name = "shop_product",
             joinColumns = { @JoinColumn(name = "shop_id") },
