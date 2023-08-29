@@ -27,6 +27,8 @@ public class Review {
     private long id;
     private String advantage;
     private String flaw;
+    private String message;
+    private long dateOfCreate;
     @ManyToMany
     @JoinTable(
             name = "review_rating",

@@ -26,6 +26,7 @@ public class Bucket {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", updatable = false, nullable = false)
     private long id;
+    private long dateOfLastUpdate;
     @OneToOne(fetch = FetchType.LAZY)
     private AppUser user;
     @ManyToMany(fetch = FetchType.LAZY)

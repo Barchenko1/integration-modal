@@ -25,7 +25,7 @@ public class Rating {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", updatable = false, nullable = false)
     private long id;
-    @Column(name = "rating", nullable = false)
+    @Column(name = "value", nullable = false)
     @Setter(AccessLevel.NONE)
     private int value;
 
@@ -33,7 +33,7 @@ public class Rating {
     @Transient
     private RateEnum ratingEnum;
 
-    public void setRating(RateEnum ratingEnum) {
+    public void setRatingEnum(RateEnum ratingEnum) {
         this.ratingEnum = ratingEnum;
         this.value = ratingEnum.getValue();
     }
