@@ -1,6 +1,8 @@
 package com.core.im.tenant.modal.option;
 
 import com.core.im.tenant.constant.OptionGroupEnum;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import lombok.Data;
 
 import jakarta.persistence.Column;
@@ -18,5 +20,6 @@ public class OptionGroup {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", updatable = false, nullable = false)
     private long id;
-    private OptionGroupEnum optionsGroup;
+    @Enumerated(EnumType.STRING)
+    private OptionGroupEnum optionGroup;
 }
