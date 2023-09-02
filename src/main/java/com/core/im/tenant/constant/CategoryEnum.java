@@ -4,7 +4,7 @@ public enum CategoryEnum {
     LAPTOPS_AND_COMPUTERS("Laptops and computers"),
     SMARTPHONES_TV_AND_ELECTRONICS("Smartphones, TV and electronics"),
     GOODS_FOR_GAMERS("Goods for gamers"),
-    APPLIANCES("Appliances"),
+    APPLIANCES("appliances"),
     HOUSEHOLD_PRODUCTS("Household products"),
     TOOLS_AND_AUTO_PRODUCTS("Tools and auto products"),
     PLUMBING_AND_REPAIR("Plumbing and repair"),
