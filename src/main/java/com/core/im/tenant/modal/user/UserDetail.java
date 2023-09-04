@@ -20,4 +20,6 @@ public class UserDetail {
     private String firstName;
     private String surName;
     private String phone;
+    private long dateOfLastUpdate;
+
 }

@@ -1,4 +1,4 @@
-package com.core.im.tenant.dto.request;
+package com.core.im.tenant.dto.request.post;
 
 import lombok.Data;
 
