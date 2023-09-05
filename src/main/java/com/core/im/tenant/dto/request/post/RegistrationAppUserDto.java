@@ -8,6 +8,6 @@ public class RegistrationAppUserDto {
     private String email;
     private String password;
     private UserDetail userDetail;
-    private String street;
-    private int apartmentNumber;
+    private String userStreet;
+    private int userApartment;
 }

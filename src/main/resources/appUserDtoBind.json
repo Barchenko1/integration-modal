@@ -1,5 +1,7 @@
 {
-  "name": "name",
-  "userStreet" : "street",
-  "name": "name"
+  "password": "password",
+  "email": "email",
+  "userStreet" : "UserAddress.street",
+  "userApartment" : "UserAddress.apartmentNumber",
+  "userDetail": "userDetail"
 }
