@@ -13,6 +13,7 @@ import jakarta.persistence.Table;
 
 import lombok.Data;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -31,5 +32,5 @@ public class Post {
     @JoinColumn(name = "post_id")
     private Post parent;
     @OneToMany(mappedBy = "parent", cascade = CascadeType.PERSIST, orphanRemoval = true)
-    private List<Post> childPostList;
+    private List<Post> childPostList = new ArrayList<>();
 }
