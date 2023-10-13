@@ -28,8 +28,8 @@
         <lombok.version>1.18.24</lombok.version>
         <jakarta.version>3.1.0</jakarta.version>
         <javax.version>2.2</javax.version>
-        <maven.compiler.source>20</maven.compiler.source>
-        <maven.compiler.target>20</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
 </project>
