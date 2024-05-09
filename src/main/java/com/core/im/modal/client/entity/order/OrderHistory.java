@@ -11,8 +11,6 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
 
-import java.util.Date;
-
 @Entity
 @Table(name = "order_history")
 @Data
@@ -21,7 +19,7 @@ public class OrderHistory {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", updatable = false, nullable = false)
     private long id;
-    private Date dataOfOrder;
+    private long dateOfCreate;
     @ManyToOne(fetch = FetchType.LAZY)
     private AppUser user;
     @ManyToOne(fetch = FetchType.LAZY)

@@ -1,16 +1,19 @@
 package com.core.im.modal.client.entity.post;
 
-import lombok.Data;
-
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
+import lombok.Data;
+
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -24,9 +27,10 @@ public class Post {
     private String authorName;
     private String authorEmail;
     private String message;
-    @OneToMany(
-            cascade = CascadeType.ALL,
-            orphanRemoval = true
-    )
-    private List<Comment> comments;
+    private long dateOfCreate;
+    @ManyToOne
+    @JoinColumn(name = "post_id")
+    private Post parent;
+    @OneToMany(mappedBy = "parent", cascade = CascadeType.PERSIST, orphanRemoval = true)
+    private List<Post> childPostList = new ArrayList<>();
 }

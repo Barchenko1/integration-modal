@@ -18,4 +18,6 @@ public class UserDetail {
     private long id;
     private String firstName;
     private String surName;
+    private String phone;
+
 }
