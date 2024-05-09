@@ -20,5 +20,4 @@ public class Card {
     private String dateOfExpire;
     private String cvv;
     private boolean isActive;
-
 }

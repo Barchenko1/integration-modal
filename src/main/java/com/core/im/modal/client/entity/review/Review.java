@@ -1,6 +1,5 @@
 package com.core.im.modal.client.entity.review;
 
-import com.core.im.tenant.modal.post.Comment;
 import com.core.im.modal.client.entity.product.Product;
 import com.core.im.modal.client.entity.product.Rating;
 import jakarta.persistence.Column;
@@ -12,7 +11,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
 
@@ -28,6 +26,8 @@ public class Review {
     private long id;
     private String advantage;
     private String flaw;
+    private String message;
+    private long dateOfCreate;
     @ManyToMany
     @JoinTable(
             name = "review_rating",
@@ -37,6 +37,4 @@ public class Review {
     private List<Rating> ratings;
     @ManyToMany(fetch = FetchType.LAZY, mappedBy = "reviews")
     private List<Product> products;
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Comment postComment;
 }

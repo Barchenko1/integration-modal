@@ -1,10 +1,7 @@
-package com.core.im.modal.client.entity.option;
+package com.core.im.modal.tenant.entity.business;
 
-import com.core.im.modal.client.constant.OptionGroupEnum;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -12,13 +9,15 @@ import jakarta.persistence.Table;
 import lombok.Data;
 
 @Entity
-@Table(name = "option_group")
+@Table(name = "business_address")
 @Data
-public class OptionGroup {
+public class BusinessAddress {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", updatable = false, nullable = false)
     private long id;
-    @Enumerated(EnumType.STRING)
-    private OptionGroupEnum optionGroup;
+    private String street;
+    private int building;
+    private int flor;
+    private int apartmentNumber;
 }

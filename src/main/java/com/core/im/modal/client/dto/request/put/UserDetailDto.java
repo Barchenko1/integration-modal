@@ -1,9 +1,9 @@
-package com.core.im.tenant.dto.request.put;
+package com.core.im.modal.client.dto.request.put;
 
 import lombok.Data;
 
 @Data
-public class UpdateUserDetailDto {
+public class UserDetailDto {
     private String firstName;
     private String surName;
     private String phone;
